@@ -104,3 +104,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;; Load the ob-js package for JavaScript support
+;;(require 'ob-js)
+
+;; Enable JavaScript in Org-Babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((js . t)))
+
+(setq visual-fill-column-width 80
+      visual-fill-column-center-text t)
+
+(after! company
+  (define-key company-active-map (kbd "C-i") #'company-complete-common))
+(after! corfu
+  (define-key corfu-map (kbd "C-i") #'corfu-complete))
