@@ -107,6 +107,11 @@
 ;; Load the ob-js package for JavaScript support
 ;;(require 'ob-js)
 
+;; Latex Options
+(setq +latex-viewers '(pdf-tools))
+;;(add-hook LaTeX-mode-hook #'xenops-mode)
+
+
 ;; Enable JavaScript in Org-Babel
 (org-babel-do-load-languages
  'org-babel-load-languages
