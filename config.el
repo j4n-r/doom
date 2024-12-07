@@ -110,7 +110,7 @@
 ;; Latex Options
 (setq +latex-viewers '(pdf-tools))
 ;;(add-hook LaTeX-mode-hook #'xenops-mode)
-
+(setq doom-theme 'doom-rose-pine)
 
 ;; Enable JavaScript in Org-Babel
 (org-babel-do-load-languages
@@ -124,3 +124,5 @@
   (define-key company-active-map (kbd "C-i") #'company-complete-common))
 (after! corfu
   (define-key corfu-map (kbd "C-i") #'corfu-complete))
+
+(require 'dap-dlv-go)
