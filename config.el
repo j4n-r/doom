@@ -107,6 +107,13 @@
 ;; Load the ob-js package for JavaScript support
 ;;(require 'ob-js)
 
+;; Org
+;; Org-habit
+(use-package! org-habit
+  :after org
+  :config
+  (setq   org-habit-show-habits t)  )
+
 ;; Org Roam
 (use-package org-roam
   :ensure t
