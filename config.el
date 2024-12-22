@@ -113,7 +113,7 @@
   :after org
   :config
   (setq   org-habit-show-habits t)  )
-
+(setq org-log-into-drawer t)
 ;; Org Roam
 (use-package org-roam
   :ensure t
@@ -159,3 +159,4 @@
   (define-key corfu-map (kbd "C-i") #'corfu-complete))
 
 (require 'dap-dlv-go)
+
