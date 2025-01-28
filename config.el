@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'semi-light))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 20 :weight 'semi-light))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -107,6 +107,7 @@
 ;; Load the ob-js package for JavaScript support
 ;;(require 'ob-js)
 
+
 ;; Org
 ;; Org-habit
 (use-package! org-habit
@@ -148,8 +149,18 @@
 ;; Enable JavaScript in Org-Babel
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((js . t)))
+ '((js . t)
+   (ipython . t)
+   (jupyter . t)
+   ))
+(require 'org-src)
+(require 'ob-async)
+(require 'ob-jupyter)
+(require 'jupyter)
+(require 'jupyter-org-client)
 
+(after! (ob-jupyter)
+  (org-babel-jupyter-aliases-from-kernelspecs))
 (setq visual-fill-column-width 80
       visual-fill-column-center-text t)
 
@@ -159,4 +170,5 @@
   (define-key corfu-map (kbd "C-i") #'corfu-complete))
 
 (require 'dap-dlv-go)
+
 

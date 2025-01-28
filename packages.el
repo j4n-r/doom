@@ -52,3 +52,7 @@
 ;;(package! ob-js)
 
 (package! todoist)
+
+
+(package! jupyter)
+(add-to-list 'load-path "/sbin/jupyter-notebook")
